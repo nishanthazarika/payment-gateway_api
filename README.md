@@ -1,6 +1,6 @@
 The **API Gateway** is one of the most architecturally rich projects because it's literally the glue of microservices architecture. complete HLD for you.
 
-![API Gateway Architecture](HLD-architecture-api-gateway.png)
+![API Gateway Architecture](img.png)
 
 Here's the full architecture:
 **The request lifecycle** — every incoming request flows top-to-bottom through the gateway before reaching any microservice. This pipeline design is the core pattern.
