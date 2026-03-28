@@ -27,6 +27,8 @@ Here's the full architecture:
 
 
 **Summary of the project workflow:**
+
+
 **Step 1 — Set up the project**. Create the folder structure, install dependencies, start Redis with Docker.
 
 **Step 2 — Build the config loader (config.py + routes.yaml)**. This is the foundation everything else reads from. Test it by loading the YAML and printing the parsed routes.
@@ -40,6 +42,9 @@ Here's the full architecture:
 **Step 6 — Add authentication (auth.py)**. Add the middleware, seed an API key in Redis, test that unauthenticated requests get rejected and authenticated ones pass through.
 
 **Step 7 — Add rate limiting (rate_limiter.py)**. Add the middleware, hit the gateway in a loop, verify you get 429s after the burst is exhausted.
+
 **Step 8 — Add the circuit breaker (circuit_breaker.py)**. Kill one of the dummy services, send requests, watch the circuit open. Restart the service, wait for recovery timeout, watch it close.
+
 **Step 9 — Add the transformer (transformer.py)**. Check that backend services receive the correlation ID, stripped prefix, and injected headers.
+
 **Step 10 — Add observability (logging_middleware.py)**. Check structured logs and the /metrics endpoint.
